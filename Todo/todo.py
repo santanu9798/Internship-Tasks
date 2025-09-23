@@ -27,11 +27,11 @@ def task():
         elif operation == 3:
             del_val = input("Which task you want to delete = ")
             if del_val in tasks:
-                ind = tasks.index(del_val)      # ✅ renamed from int → ind
+                ind = tasks.index(del_val)      #  renamed from int → ind
                 del tasks[ind]
                 print(f"Task '{del_val}' has been deleted...")
 
-        elif operation == 4:                      # ✅ changed to 4 (view tasks)
+        elif operation == 4:                      # changed to 4 (view tasks)
             print(f"Total tasks = {tasks}")
 
         elif operation == 5:
