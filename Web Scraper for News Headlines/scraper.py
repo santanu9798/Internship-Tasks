@@ -17,7 +17,7 @@ def scrape_headlines(url, output_file="headlines.txt"):
         soup = BeautifulSoup(response.text, "html.parser")
 
         # Step 3: Extract headlines (BBC example: <h3>)
-        headlines = soup.find_all(['h1', 'h2', 'h3'])
+        headlines = soup.find_all([ 'h2'])
 
         # Step 4: Save headlines into a text file
         with open(output_file, "w", encoding="utf-8") as file:
@@ -29,7 +29,7 @@ def scrape_headlines(url, output_file="headlines.txt"):
         print(f" {len(headlines)} Headlines scraped and saved to '{output_file}'")
 
     except requests.exceptions.RequestException as e:
-        print("❌ Error:", e)
+        print(" Error:", e)
 
 
 if __name__ == "__main__":
