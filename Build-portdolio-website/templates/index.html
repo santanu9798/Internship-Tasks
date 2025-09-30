@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="hero">
+    <img class="profile" src="{{ url_for('static', filename='images/profile.svg') }}" alt="profile" />
+    <h2>{{ personal.title }}</h2>
+    <p>{{ personal.bio }}</p>
+    <p>
+      <strong>Skills:</strong>
+      {% for s in personal.skills %}
+        <span class="skill">{{ s }}</span>
+      {% endfor %}
+    </p>
+  </section>
+
+  <section class="projects">
+    <h3>Projects</h3>
+    <div class="project-list">
+      {% for p in projects %}
+        <article class="project">
+          <h4>{{ p.title }}</h4>
+          <p>{{ p.desc }}</p>
+          <a href="{{ p.link }}" target="_blank">View</a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

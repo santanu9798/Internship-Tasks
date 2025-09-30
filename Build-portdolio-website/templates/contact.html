@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>contact me</h2>
+<form method="post" action="{{ url_for('contact')}}" class="contact-form">
+    <label>
+        Name<input type="text" name="name" required>
+    </label>
+    <label>
+        Email<input type="email" name="email" required>
+    </label>
+    <label>
+        Subject<input type="text" name="Subject" required>
+    </label>
+    <label>
+        Message<textarea name="massage" rows="6" required ></textarea>
+    </label>
+    <button type="submit">Send</button>
+</form>
+{% endblock content %}
