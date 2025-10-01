@@ -1,27 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-  <section class="hero">
-    <img class="profile" src="{{ url_for('static', filename='images/profile.svg') }}" alt="profile" />
+<section class="hero">
+    <img class="profile" src="{{ url_for('static', filename='images/profile.jpg') }}" alt="profile" />
     <h2>{{ personal.title }}</h2>
     <p>{{ personal.bio }}</p>
     <p>
-      <strong>Skills:</strong>
-      {% for s in personal.skills %}
+    <strong>Skills:</strong>
+    {% for s in personal.skills %}
         <span class="skill">{{ s }}</span>
-      {% endfor %}
+    {% endfor %}
     </p>
-  </section>
+</section>
 
-  <section class="projects">
+<section class="projects">
     <h3>Projects</h3>
     <div class="project-list">
-      {% for p in projects %}
+    {% for p in projects %}
         <article class="project">
-          <h4>{{ p.title }}</h4>
-          <p>{{ p.desc }}</p>
-          <a href="{{ p.link }}" target="_blank">View</a>
+        <h4>{{ p.title }}</h4>
+        <p>{{ p.desc }}</p>
+        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used"><li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">JavaScript</div></li><li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Python</div></li><li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">HTML</div></li><li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Batchfile</div></li></ul>
+        <a href="{{ p.link }}" target="_blank">View</a>
         </article>
-      {% endfor %}
+    {% endfor %}
     </div>
-  </section>
+</section>
 {% endblock %}

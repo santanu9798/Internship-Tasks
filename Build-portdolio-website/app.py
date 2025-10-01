@@ -22,13 +22,13 @@ def index():
     personal = {
         "name": "Santanu",
         "title": "Software Developer",
-        "bio": "Short bio about yourself. Replace this with something meaningful",
+        "bio": "Passionate about creating scalable web apps and backend systems. 🌱 Always exploring.",
         "skills": ["python", "Flask", "HTML", "CSS", "Git"],
     }
-    
-    projects =[
-        {"title": "Project A", "desc": "A small web app", "link": "#"},
-        {"title": "project B", "desc": "Another project", "link": "#"},
+
+    projects = [
+        {"title": "Payment", "desc": "Online payment processing system", "link": "https://github.com/santanu9798/Payment.git"},
+        {"title": "Taxibooking", "desc": "A taxi booking application", "link": "https://github.com/santanu9798/Taxi-booking.git"},
     ]
     return render_template("index.html", personal=personal, projects=projects)
 
